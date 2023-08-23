@@ -15,6 +15,7 @@
       <version>3.8.1</version>
     </dependency>
   </dependencies>
+  
   <build>
     <finalName>01-maven-web-app</finalName>
     <plugins>
@@ -23,19 +24,20 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
       </plugin>
+      
+      <!-- Tomcat Maven Plugin Configuration -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>tomcat-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <url>http://34.228.11.193:8080/manager</url>
+          <username>admin</username>
+          <password>admin</password>
+          <server>TomcatServer</server>
+          <path>/opt/apache-tomcat-9.0.65/webapps</path>
+        </configuration>
+      </plugin>
     </plugins>
-     </dependency>
-  </dependencies>
   </build>
 </project>
-<plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>tomcat-maven-plugin</artifactId>
-    <configuration>
-        <url>http://34.228.11.193:8080//manager</url>
-        <username>admin</username>
-        <password>admin</password>
-        <server>TomcatServer</server>
-        <path>//opt/apache-tomcat-9.0.65/webapps</path>
-    </configuration>
- </plugin>
